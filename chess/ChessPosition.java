@@ -24,7 +24,7 @@ public class ChessPosition {
     }
 
     protected Position toPosition(){
-        // subtraindo 'a' da column, trás o inteiro referente a subtração dos unicodes
+        // subtraindo 'a' da column trás o inteiro referente a subtração dos unicodes
         return new Position(8 - row, column - 'a');
     }
 
