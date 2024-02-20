@@ -15,11 +15,11 @@ public class ChessMatch {
 
     private int turn;
     private Color currentPlayer;
-    private Board board;
+    private final Board board;
     private boolean check;
     private boolean checkMate;
-    private List<Piece> piecesOnTheBoard = new ArrayList<>();
-    private List<Piece> capturedPieces = new ArrayList<>();
+    private final List<Piece> piecesOnTheBoard = new ArrayList<>();
+    private final List<Piece> capturedPieces = new ArrayList<>();
 
     public ChessMatch(){
         board = new Board(8,8);
