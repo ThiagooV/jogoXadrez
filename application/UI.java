@@ -59,7 +59,15 @@ public class UI {
         System.out.println();
         System.out.println("Turn: " + chessMatch.getTurn());
         if(chessMatch.getCheckMate()){
-            System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+            Color currentPlayer = chessMatch.getCurrentPlayer();
+            String aux = "";
+            if (currentPlayer == Color.WHITE){
+                aux = ANSI_CYAN + Color.WHITE + ANSI_RESET;
+            }
+            else{
+                aux = ANSI_YELLOW + Color.BLACK + ANSI_RESET;
+            }
+            System.out.println("Waiting player: " + aux);
             if(chessMatch.getCheck()){
                 System.out.println("CHECK!");
             }
@@ -92,14 +100,14 @@ public class UI {
     }
     private static void printPiece(ChessPiece piece, boolean background){
         if(background){
-            System.out.print(ANSI_BLACK_BACKGROUND);
+            System.out.print(ANSI_WHITE_BACKGROUND);
         }
         if (piece == null) {
             System.out.print("-" + ANSI_RESET);
         }
         else {
             if (piece.getColor() == Color.WHITE) {
-                System.out.print(ANSI_WHITE + piece + ANSI_RESET);
+                System.out.print(ANSI_CYAN + piece + ANSI_RESET);
             }
             else {
                 System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
@@ -111,11 +119,11 @@ public class UI {
     private static void printCapturedPieces(List<ChessPiece> captured){
 
         System.out.println("Captured pieces:");
-        System.out.print("White: ");
-        System.out.print(ANSI_WHITE);
+        System.out.print(ANSI_CYAN + "White: ");
+        System.out.print(ANSI_CYAN);
         System.out.println(Arrays.toString(captured.stream().filter(x -> x.getColor() == Color.WHITE).toArray()));
         System.out.print(ANSI_RESET);
-        System.out.print("Black: ");
+        System.out.print(ANSI_YELLOW + "Black: ");
         System.out.print(ANSI_YELLOW);
         System.out.println(Arrays.toString(captured.stream().filter(x -> x.getColor() == Color.BLACK).toArray()));
         System.out.print(ANSI_RESET);
