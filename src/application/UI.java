@@ -60,7 +60,7 @@ public class UI {
         System.out.println("Turn: " + chessMatch.getTurn());
         if(chessMatch.getCheckMate()){
             Color currentPlayer = chessMatch.getCurrentPlayer();
-            String aux = "";
+            String aux;
             if (currentPlayer == Color.WHITE){
                 aux = ANSI_CYAN + Color.WHITE + ANSI_RESET;
             }
