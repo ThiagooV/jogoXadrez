@@ -1,6 +1,6 @@
-package chess;
+package src.chess;
 
-import boardgame.BoardException;
+import src.boardgame.BoardException;
 
 public class ChessException extends BoardException {
     public ChessException(String message) {
